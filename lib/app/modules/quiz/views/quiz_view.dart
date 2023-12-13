@@ -53,17 +53,33 @@ class QuizView extends GetView<QuizController> {
                 : Container()),
         backgroundColor: Colors.white,
       ),
-      body: Obx(
-        () => controller.questionIndex.value < controller.questions.length
-            ? Padding(
-                padding: const EdgeInsets.all(30.0),
-                child: Quiz(
-                  answerQuestion: controller.answerQuestion,
-                  questionIndex: controller.questionIndex.value,
-                  questions: controller.questions,
-                ),
-              ) //Quiz
-            : Result(controller.totalScore.value, controller.resetQuiz),
+      body: Stack(
+        children: <Widget>[
+          const SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Opacity(
+                  opacity: 0.1,
+                  child: Image(
+                    image: AssetImage('assets/images/peakpx.jpg'),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Obx(
+            () => controller.questionIndex.value < controller.questions.length
+                ? Padding(
+                    padding: const EdgeInsets.all(30.0),
+                    child: Quiz(
+                      answerQuestion: controller.answerQuestion,
+                      questionIndex: controller.questionIndex.value,
+                      questions: controller.questions,
+                    ),
+                  ) //Quiz
+                : Result(controller.totalScore.value, controller.resetQuiz),
+          ),
+        ],
       ), //Padding
     ); //MaterialApp
   }

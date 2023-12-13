@@ -30,9 +30,9 @@ class DiscussionView extends GetView<DiscussionController> {
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: ListView.builder(
-              itemCount: 11,
+              itemCount: 21,
               itemBuilder: (BuildContext context, int index) {
-                if (index == 10) {
+                if (index == 20) {
                   return Container(
                     margin: EdgeInsets.symmetric(horizontal: 20),
                     decoration:

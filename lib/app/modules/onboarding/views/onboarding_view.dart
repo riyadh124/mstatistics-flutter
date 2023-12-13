@@ -43,7 +43,7 @@ class OnboardingView extends GetView<OnboardingController> {
                         height: 30,
                       ),
                       Text(
-                        "Apakah kamu siap \nbelajar Materi Relasi\ndan Fungsi?",
+                        "Apakah kamu siap \nbelajar Materi Relasi?",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 28,
